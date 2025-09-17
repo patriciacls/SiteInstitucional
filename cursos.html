@@ -49,7 +49,69 @@
       text-decoration: none;
     }
 
-    
+    /* Container do menu */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Botão do menu */
+  .dropbtn {
+    background-color: #007BFF; /* Azul */
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .dropbtn:hover {
+    background-color: #0056b3;
+  }
+
+  /* Conteúdo do menu */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #007BFF;
+    min-width: 180px;
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-top: 5px;
+  }
+
+  /* Itens do menu */
+  .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    transition: background-color 0.3s;
+  }
+
+  .dropdown-content a:last-child {
+    border-bottom: none;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #0056b3;
+  }
+
+  /* Mostrar menu ao passar o mouse */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  /* Centralizar o container */
+.container {
+  display: flex;
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: center;     /* centraliza verticalmente */
+  height: 100vh;           /* altura total da tela */
+}
   </style> 
 </head>
 <body>
@@ -76,7 +138,7 @@
 <!-- HERO -->
 <header class="hero text-center">
   <div class="container">
-    <h1 class="display-5 fw-bold">Faculdade Campo x 
+    <h1 class="display-5 fw-bold">Cursos
     </h1>
     <p class="lead text-muted">Transformando conhecimento em futuro.</p>
   </div>
@@ -90,93 +152,16 @@
   </form>
 </section>
 
-
-
-
-<!-- GRADUAÇÃO -->
-<section id="graduacao" class="py-5">
-  <div class="container">
-    <h2 class="section-title">Graduação</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card grad-card h-100 border-primary">
-          <div class="card-body">
-            <h5 class="card-title text-primary">Dual Degree</h5>
-            <p class="card-text">Estude aqui e conquiste também um diploma internacional. Uma experiência única para sua carreira!</p>
-            <span class="badge bg-primary">Destaque</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card grad-card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Bacharelado</h5>
-            <p class="card-text">Cursos completos com sólida formação teórica e prática.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card grad-card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Tecnólogos</h5>
-            <p class="card-text">Formação rápida e prática para entrar no mercado de trabalho.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+<div class="dropdown">
+  <button class="dropbtn">Menu Azul</button>
+  <div class="dropdown-content">
+    <a href="#">Opção 1</a>
+    <a href="#">Opção 2</a>
+    <a href="#">Opção 3</a>
   </div>
-</section>
+</div>
 
-<!-- QUEM SOMOS -->
-<section id="quem-somos" class="py-5 bg-light">
-  <div class="container">
-    <h2 class="section-title">Quem Somos</h2>
-    <p class="lead text-center">Somos um polo educacional comprometido com a excelência acadêmica e a formação cidadã, oferecendo ensino de qualidade, inovação e proximidade com nossos alunos.</p>
-  </div>
-</section>
 
-<!-- MISSAOVISAOVALOR -->
-<section id="graduacao" class="py-10">
-    
-     <section id="mvv" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center mb-5">Nossa Identidade</h2>
-      
-      <!-- Card Missão -->
-      <div class="card mb-4 border-primary shadow-sm">
-        <div class="card-body text-center">
-          <h5 class="card-title text-primary">Missão</h5>
-          <p class="card-text">Fazer o aluno estudar</p>
-        </div>
-      </div>
-      
-      <!-- Card Visão -->
-      <div class="card mb-4 border-primary shadow-sm">
-        <div class="card-body text-center">
-          <h5 class="card-title text-primary">Visão</h5>
-          <p class="card-text">Fazer o aluno pagar (😅 brincadeira)</p>
-        </div>
-      </div>
-      
-      <!-- Card Valores -->
-      <div class="card mb-4 border-primary shadow-sm">
-        <div class="card-body text-center">
-          <h5 class="card-title text-primary">Valores</h5>
-          <p class="card-text">1000k</p>
-        </div>
-      </div>
-    </div>
-  </section>
-</section>
-
-<!-- UNIDADE -->
-<section id="unidade" class="py-5 text-center">
-  <div class="container">
-    <h2 class="section-title">Informações sobre a Unidade</h2>
-    <p>Conheça mais sobre nossa estrutura, localização e recursos disponíveis.</p>
-    <a href="https://fce.edu.br/unidades/" target="_blank" class="btn btn-primary">Ver Unidades Oficiais</a>
-  </div>
-</section>
 
 <!-- FOOTER -->
 <footer class="text-center">
