@@ -113,7 +113,27 @@
       <div class="col-lg-6">
         <div class="contact-card bg-white">
           <h4 class="mb-3">Envie sua mensagem</h4>
-          <form>
+
+<form id="contact-form">
+  <div class="mb-3">
+    <label for="name" class="form-label">Nome</label>
+    <input type="text" class="form-control" id="name" placeholder="Seu nome completo" required>
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" class="form-control" id="email" placeholder="seu@email.com" required>
+  </div>
+  
+  <div class="mb-3">
+    <label for="message" class="form-label">Mensagem</label>
+    <textarea class="form-control" id="message" rows="5" placeholder="Digite sua mensagem" required></textarea>
+  </div>
+<div class="form-group">
+        <input type="submit" value="Send Message" />
+    </div>
+  </form>
+
+        <!--   <form>
             <div class="mb-3">
               <label for="nome" class="form-label">Nome</label>
               <input type="text" class="form-control" id="nome" placeholder="Seu nome" required>
@@ -124,10 +144,11 @@
             </div>
             <div class="mb-3">
               <label for="mensagem" class="form-label">Mensagem</label>
-              <textarea class="form-control" id="mensagem" rows="5" placeholder="Digite sua mensagem" required></textarea>
+              <textarea class="form-control" id="message" rows="5" placeholder="Digite sua mensagem" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
           </form>
+ -->
         </div>
       </div>
       <div class="col-lg-6">
@@ -192,9 +213,32 @@
   </div>
 </footer>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+<!--envio com o emaijs-->
+			<!--envio com o emaijs-->
+			<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">
+   // Substitua pelos seus IDs reais!
+   const serviceID = 'service_ekq7o5r';
+   const templateID = 'template_lqxy1yg';
+   const publicKey = 'LXsFF4mNcHMIeLVJa';
+
+   // Inicializa o EmailJS com sua chave pública
+   emailjs.init(publicKey);
+
+   // Adiciona um "ouvinte" para o evento de envio do formulário
+   document.getElementById('contact-form').addEventListener('submit', function(event) {
+       event.preventDefault(); // Impede o envio padrão do formulário (que recarregaria a página)
+
+       // Envia o formulário
+       emailjs.sendForm(serviceID, templateID, this)
+           .then(() => {
+               // Ação de sucesso: mostra uma mensagem, limpa o formulário, etc.
+               alert('Mensagem enviada com sucesso!');
+           }, (err) => {
+               // Ação de erro: mostra uma mensagem de erro
+               alert(JSON.stringify(err));
+           });
+   });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
